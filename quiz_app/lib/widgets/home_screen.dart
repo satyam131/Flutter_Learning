@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -17,9 +20,9 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const Text(
+          Text(
             "Learn Flutter the fun way!",
-            style: TextStyle(
+            style: GoogleFonts.lato(
               color: Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -29,7 +32,7 @@ class HomeScreen extends StatelessWidget {
             height: 30,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
